@@ -1,0 +1,17 @@
+configuration{
+    modi: "run,drun,calc";
+    show-icons: true;
+    terminal: "foot";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: true;
+    hide-scrollbar: true;
+    display-run: " Run";
+    display-drun: "󰕰 Apps";
+    display-calc: "󰅯 Calc";
+    display-filebrowser: " File";
+    display-Network: "󰤨 Network";
+    sidebar-mode: true;
+}
+
+@theme "/home/liuyuxin/.config/rofi/catppuccin-latte.rasi"

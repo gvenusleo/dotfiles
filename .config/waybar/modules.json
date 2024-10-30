@@ -1,0 +1,190 @@
+{
+  "group/left": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/workspaces",
+      "disk",
+      "cpu",
+      "memory",
+      "network#upSpeed",
+      "network#downSpeed"
+    ]
+  },
+
+  "group/right": {
+    "orientation": "horizontal",
+    "modules": [
+      "bluetooth",
+      "pulseaudio",
+      "backlight",
+      "network#info",
+      "battery",
+      "clock"
+    ]
+  },
+
+  // Workspaces
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  // Harddisc space used
+  "disk": {
+    "interval": 30,
+    "format": " {percentage_used}%",
+    "path": "/"
+  },
+ 
+  // CPU
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 1
+  },
+ 
+  // Memory
+  "memory": {
+    "format": " {}%",
+    "interval": 1
+  },
+
+  // Network Up Speed
+  "network#upSpeed": {
+    "name": "speed",
+    "format": " {bandwidthUpBytes}",
+    "interval": 1
+  },
+  
+  // Network Down Speed
+  "network#downSpeed": {
+    "name": "speed",
+    "format": " {bandwidthDownBytes}",
+    "interval": 1
+  },
+
+  // Taskbar
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 20,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-right": "close",
+    "on-click-middle": "close",
+    "ignore-list": ["clipse", "Rofi"]
+  },
+
+  // Hyprland Window
+  "window": {
+    "rewrite": {},
+    "separate-outputs": true
+  },
+
+ // System tray
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+
+  // Bluetooth
+  "bluetooth": {
+    "format": " {num_connections}",
+    "format-disabled": "",
+    "format-off": "",
+    "interval": 30,
+    "on-click": "blueman-applet",
+    "format-no-controller": ""
+  },
+
+  // Pulseaudio
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
+    "format-bluetooth-muted": "{icon}   {format_source}",
+    "format-muted": "{format_source}  ",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  // backlight:
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "scroll-step": 1
+  },
+
+  // Network
+  "network#info": {
+    "format": "{ifname}",
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": "",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "on-click": "nm-applet"
+  },
+
+  // Battery
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  // Clock
+  "clock": {
+    "format": "{:%y/%Om/%Od %H:%M}",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "today": "<u>{}</u>"
+      }
+    },
+    "tooltip-format": "<span font='monospace'>{calendar}</span>"
+  }
+}
