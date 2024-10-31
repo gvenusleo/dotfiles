@@ -24,11 +24,19 @@ function ll
     eza -a -l --icons --color $argv
 end
 
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
 alias c='clear'
 alias e='helix'
 alias v='helix'
 alias h='helix'
-alias y='yazi'
 alias zat='zathura'
 alias vpn='sudo openconnect --protocol=pulse https://vpn.pku.edu.cn'
 
