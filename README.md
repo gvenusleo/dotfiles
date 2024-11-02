@@ -95,7 +95,7 @@ sudo chsh -s /usr/bin/fish
 终端工具：
 
 ```bash
-paru -S --needed bat bottom helix
+paru -S --needed bat bottom fastfetch helix zoxide
 ```
 
 输入法：
