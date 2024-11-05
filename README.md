@@ -1,9 +1,6 @@
 # Archlinux + Hyprland
 
-<div style="display: flex; justify-content: space-between;">
-    <img src="./assets/1.png" style="width: 49%;" alt="asset1">
-    <img src="./assets/2.png" style="width: 49%;" alt="assets">
-</div>
+![preview.png](./assets/preview.png)
 
 # 基础软件安装
 
