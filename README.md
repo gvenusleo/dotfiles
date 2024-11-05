@@ -13,7 +13,7 @@ cd paru
 makepkg -si
 ```
 
-# 字体配置
+# 字体安装
 
 使用 Sarasa UI SC 作为系统字体，前往 [Sarasa-Gothic](https://github.com/be5invis/Sarasa-Gothic) 下载字体后：
 
@@ -31,12 +31,6 @@ paru -S --needed adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts 
     inter-font noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-font-awesome \
     ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-liberation \
     ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
-```
-
-配置系统字体：
-
-```bash
-sudo cp ./etc/fonts/local.conf /etc/fonts/local.conf
 ```
 
 # Hyprland 配置
