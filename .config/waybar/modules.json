@@ -91,7 +91,7 @@
     "separate-outputs": true
   },
 
- // System tray
+  // System tray
   "tray": {
     "icon-size": 20,
     "spacing": 10
