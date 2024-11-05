@@ -98,8 +98,8 @@ paru -S --needed bat bottom fastfetch helix zoxide
 输入法：
 
 ```bash
-paru -S --needed fcitx5 fcitx5-chinese-addons fcitx5-configtool
-paru -S --needed catppuccin-fcitx5-git
+paru -S --needed catppuccin-fcitx5-git fcitx5 fcitx5-chinese-addons \
+    fcitx5-configtool fcitx5-pinyin-zhwiki
 ```
 
 剪切板管理：
@@ -114,16 +114,36 @@ paru -S --needed clipse
 paru -S --needed chromium zen-browser-bin
 ```
 
-媒体管理：
+蓝牙、媒体与网络管理：
 
 ```bash
-paru -S --needed mpv obs-studio
+paru -S --needed blueman bluz mpv network-manager-applet \
+    nm-connection-editor pavucontrol pipewire pipewire-alsa \
+    pipewire-audio pipewire-ffado pipewire-jack pipewire-libcamera \
+    pipewire-pulse pipewire-roc pipewire-session-manager
+```
+
+Clash：
+
+```bash
+paru -S --needed clash-verge-rev-bin
 ```
 
 PDF 阅读器：
 
 ```bash
 paru -S --needed zathura zathura-pdf-mupdf
+```
+
+腾讯会议：
+
+```bash
+paru -S --needed obs-studio linux-headers wemeet-bin \
+    xdg-desktop-portal xdg-desktop-portal-lxqt \
+    xdg-desktop-portal-wlr v4l2loopback-dkms
+sudo modprobe v4l2loopback devices=1 video_nr=10 \
+    card_label='OBS Cam' exclusive_caps=1
+sudo modprobe snd-aloop index=10 id='OBS Mic'
 ```
 
 Cursor 主题：
