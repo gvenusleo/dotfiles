@@ -33,6 +33,12 @@ paru -S --needed adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts 
     ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
 ```
 
+系统字体配置：
+
+```bash
+sudo cp ./etc/fonts/local.conf /etc/fonts/
+```
+
 # Hyprland 配置
 
 配置文件：
@@ -86,7 +92,7 @@ sudo chsh -s /usr/bin/fish
 终端工具：
 
 ```bash
-paru -S --needed bat bottom fastfetch helix zoxide
+paru -S --needed bat bottom eza fastfetch helix zoxide
 ```
 
 输入法：
@@ -111,10 +117,14 @@ paru -S --needed chromium zen-browser-bin
 蓝牙、媒体与网络管理：
 
 ```bash
-paru -S --needed blueman bluz mpv network-manager-applet \
+paru -S --needed blueman mpv network-manager-applet \
     nm-connection-editor pavucontrol pipewire pipewire-alsa \
     pipewire-audio pipewire-ffado pipewire-jack pipewire-libcamera \
     pipewire-pulse pipewire-roc pipewire-session-manager
+systemctl enable bluetooth
+systemctl start bluetooth
+systemctl enable NetworkManager
+systemctl start NetworkManager
 ```
 
 Clash：
@@ -161,6 +171,6 @@ paru -S --needed qt5ct qt6ct
 SDDM 主题配置：
 
 ```bash
-sudo cp ./etc/share/sddm/themes/where_is_my_sddm_theme/ /usr/share/sddm/themes/
+sudo cp -r ./usr/share/sddm/themes/where_is_my_sddm_theme/ /usr/share/sddm/themes/
 sudo cp ./etc/sddm.conf /etc/sddm.conf
 ```
